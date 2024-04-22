@@ -1,0 +1,23 @@
+name: Shagun
+on:
+    workflow_dispatch:
+      inputs:
+        image-choice:
+          description: 'Choose the image you want to pull and run'
+          type: choice
+          default: 'python'
+          options:
+            - 'mysql'
+            - 'warp'
+            - 'node'
+            - 'alpine'
+            - 'redis'
+jobs:
+    pull-docker-image:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Step
+          uses: actions/checkout@v4
+        - name: Pull and run image
+          run: docker run ${{github.event.inputs.image-choice}}
+          
