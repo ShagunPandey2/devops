@@ -3,7 +3,7 @@ on:
     workflow_dispatch:
       inputs:
         image-choice:
-          description: 'Choose the image you want to pull and run'
+          description: 'From below choose the image you want to pull'
           type: choice
           default: 'python'
           options:
