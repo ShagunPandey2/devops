@@ -12,7 +12,7 @@ on:
           - 'node'
           - 'mysql'
           - 'redis'
-          - 'alpine'
+          - 'ubuntu'
 
 jobs:
   pull-and-run-docker-image:
