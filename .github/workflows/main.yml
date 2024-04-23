@@ -4,7 +4,7 @@ on:
       inputs:
         image-choice:
           description: 'From below choose the image you want to pull'
-          type: choice
+          type: selected
           default: 'python'
           options:
             - 'mysql'
@@ -14,10 +14,10 @@ on:
             - 'redis'
 jobs:
     pull-docker-image:
-      runs-on: ubuntu-latest
+      runs-on: python-latest
       steps:
         - name: Checkout Step
           uses: actions/checkout@v4
         - name: Pull and run image
-          run: docker run ${{github.event.inputs.image-choice}}
+          run: docker run ${{github.event.inputs.image-selected}}
           
